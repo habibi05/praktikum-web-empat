@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Chat</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        .box {
+            border: 1px solid black;
+            width: 25%;
+        }
+        .box-content {
+            height: 200px;
+            overflow: auto;
+        }
+        .box-content p {
+            margin: 0;
+        }
+        .box-input input {
+            width: 85%;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <div class="box-content" id="box-content"></div>
+        <div class="box-input">
+            <input type="text" id="message">
+            <button onclick="send()" id="btn-submit">Kirim</button>
+        </div>
+    </div>
+
+    <script>
+        function send() {
+            let message = document.getElementById("message").value;
+
+            let tag = document.createElement("p");
+            tag.innerHTML = message;
+            document.getElementById("box-content").appendChild(tag);
+
+            document.getElementById("message").value = "";
+        }
+    </script>
+</body>
+</html>

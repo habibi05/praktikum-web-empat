@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Pilih Gambar</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        #img-choise {
+            border: 3px solid #ddd;
+            margin-top: 15px;
+            width: 30%;
+        }
+    </style>
+</head>
+<body>
+    <div class="choise">
+        <label>Pilih Gambar: </label>
+        <select id="choise-img" onchange="image()">
+            <option value="nissan.jpg">Nissan</option>
+            <option value="toyota.jpg">Toyota</option>
+            <option value="mazda.jpg">Mazda</option>
+            <option value="honda.jpg">Honda</option>
+            <option value="ford.jpg">Ford</option>
+        </select>
+    </div>
+
+    <div>
+        <img src="gambar/nissan.jpg" id="img-choise" alt="">
+    </div>
+
+    <script>
+        function image() {
+            let image = document.getElementById("choise-img").value;
+
+            document.getElementById("img-choise").src="gambar/"+image;
+        }
+    </script>
+</body>
+</html>

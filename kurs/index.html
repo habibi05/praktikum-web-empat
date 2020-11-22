@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Kurs Rupiah</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <form>
+    	<fieldset>
+    		<legend>Kurs Rupiah - Mata Uang Asing</legend>
+    		
+            <table border="1">
+                <thead>
+                    <tr>
+                        <th>Masukan Nilai</th>
+                        <th>Valas</th>
+                        <th>Nilai Rupiah</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr>
+                        <td>
+                            <input type="number" id="nilai_input">
+                        </td>
+                        <td>
+                            <select id="kurs_country" onchange="kurs()">
+                                <option value="us">Dollar US</option>
+                                <option value="singapore">Dollar Singapore</option>
+                                <option value="malaysia">Ringgit Malaysia</option>
+                                <option value="jepang">Yen Jepang</option>
+                                <option value="euro">Euro</option>
+                                <option value="riyal">Riyal Arab Saudi</option>
+                            </select>
+                        </td>
+                        <td>
+                            <input type="text" id="nilai_output" disabled>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+    	</fieldset>
+    </form>
+
+    <script>
+        function kurs() {
+            let input   = document.getElementById("nilai_input").value;
+            let country = document.getElementById("kurs_country").value;
+
+            if (input) {
+                if (country == "us") {
+                    output = input * 9915;
+                } else if (country == "singapore") {
+                    output = input * 13472;
+                } else if (country == "malaysia") {
+                    output = input * 874;
+                } else if (country == "jepang") {
+                    output = input * 120;
+                } else if (country == "euro") {
+                    output = input * 15888;
+                } else if (country == "riyal") {
+                    output = input * 3592;
+                } else {
+                    alert("Gagal, terjadi kesalahan!");
+                }
+            }
+
+            document.getElementById("nilai_output").value = output;
+        }
+    </script>
+</body>
+</html>
